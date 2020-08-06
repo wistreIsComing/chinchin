@@ -1,0 +1,33 @@
+<app-currencies></app-currencies>
+<div id="login" class="text-center">
+  <form method="POST" action="#" class="form-signin">
+  
+    <img src="../../../assets/images/logo.png" alt="" width="200" class="mb-4">
+    <h3 class="h1 mb-3">Login</h3>
+    <!-- Email -->
+    <label for="email" class="sr-only">Email: </label>
+
+      <input id="email" type="email" placeholder="Email" class="form-control" name="email" #userName required>
+
+      <!-- Password -->
+
+    <label for="password" class="sr-only">Password: </label>
+
+      <input id="password" type="password" placeholder="Password" class="form-control" name="password" #userPwd required>
+
+    <div class="forgot-password my-3">
+      <input type="button" value="Login" class="btn btn-primary btn-block" (click)="authService.signIn(userName.value, userPwd.value)">
+  
+    </div>
+
+    <div class="forgot-password my-3">
+      <button type="button" class="btn btn-primary btn-block" (click)="authService.googleAuth()">
+        <i class="fab fa-google"></i>
+        Login with Google
+      </button>
+    </div>
+  <a [routerLink]="['/signup']">
+    <span>Don't have an account? <span class="redirect">Sign Up</span></span>
+  </a>
+  </form>
+</div>

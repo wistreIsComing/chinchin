@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+/* Importing owl-carousel SCSS file. */
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+#wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  &.toggled #sidebar-toggled {
+      margin-left: 0;
+      @media screen and (min-width: 768px) {
+          margin-left: -15rem;
+      }
+  }
+  #content-wrapper {
+      min-width: 100vw;
+      @media screen and (min-width: 768px) {
+          min-width: 0;
+          width: 100%;
+      }
+  }
+
+}

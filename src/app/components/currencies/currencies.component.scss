@@ -1,0 +1,38 @@
+owl-carousel-o {
+  @media(max-width: 1000px) {
+    display: none;
+  }
+  .market-cards {
+  margin-top: 5%;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  background-color: #f9f1f1;
+  width: 360px;
+  .content {
+    padding: 0 1.25rem 0 1.25rem;
+    font-size: 12px;
+    .market-symbol {
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .market-title {
+      font-weight: 300;
+      letter-spacing: 1.5;
+    }
+    .price-change {
+      font-weight: 800;
+    }
+    .price {
+      font-weight: 600;
+    }
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+}
+}
+
+

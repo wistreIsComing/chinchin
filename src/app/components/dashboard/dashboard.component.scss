@@ -1,0 +1,34 @@
+.currency-title {
+  color: #fff;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+@media(max-width: 900px) {
+  .buy {
+    display: none;
+  }
+
+  .pay {
+    display: none;
+  }
+
+  .balance {
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;  
+  }
+
+  .user-data {
+    align-items: center;
+    flex-wrap: nowrap !important;
+  }
+
+  .welcome {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .welcome-subheading {
+    text-align: center;
+  }
+}

@@ -1,0 +1,116 @@
+<div class="container-fluid">
+  <div class="container">
+    <app-currencies></app-currencies>
+
+    <!-- Navbar -->
+    <ul class="nav grey user-data lighten-4 py-4 mt-5 d-flex justify-content-between">
+      <li class="nav-item">
+        <img src="../../../assets/images/logo.png" alt="Chin Chin Logo" width="200"  class="pl-3 mt-2">
+      </li>
+      <li class="nav-item">
+        <p class="balance font-weight-bold pt-3">6.449.989,38 VES</p>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-success btn pay">Pagar Orden</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-success btn buy">Compra - Venta</button>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="dropdown-item" (click)="this.authService.signOut();">{{ this.authService.userData.displayName }}</a>          
+      </li>
+    </ul>
+    <!-- Welcome -->
+    <div class="jumbotron-fluid mt-3">
+      <h3 class="display-3 welcome">Bienvenido</h3>
+      <p class="lead welcome-subheading">Mis billeteras o cuentas</p>
+    </div>
+  
+    <!-- Currency wallet -->
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+          <mdb-card>
+            <mdb-card-header class="success-color-dark py-3">
+              <mdb-card-title>
+                <h3 class="font-weight-bold currency-title">Bolivar Soberano</h3>
+              </mdb-card-title>
+            </mdb-card-header>
+            <mdb-card-body>
+          
+              <mdb-card-text class="pl-3 my-0">
+                <h4 class="font-weight-bold text-muted">9.489,00 VES</h4>
+              </mdb-card-text>
+            </mdb-card-body>
+          </mdb-card>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+          <mdb-card>
+            <mdb-card-header class="warning-color py-3">
+              <mdb-card-title>
+                <h3 class="font-weight-bold currency-title">Bitcoin</h3>
+              </mdb-card-title>
+            </mdb-card-header>
+            <mdb-card-body>
+          
+              <mdb-card-text class="pl-3">
+                <h4 class="font-weight-bold text-muted">0,0034186 BTC</h4>
+              </mdb-card-text>
+            </mdb-card-body>
+          </mdb-card>
+        </div>
+
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+          <mdb-card>
+            <mdb-card-header class="danger-color py-3">
+              <mdb-card-title>
+                <h3 class="font-weight-bold currency-title">Petros</h3>
+              </mdb-card-title>
+            </mdb-card-header>
+            <mdb-card-body>
+          
+              <mdb-card-text class="pl-3">
+                <h4 class="font-weight-bold text-muted">1 PTR</h4>
+              </mdb-card-text>
+            </mdb-card-body>
+          </mdb-card>
+        </div>
+      </div>
+    </div>
+    
+
+  <!-- Payments records -->
+  <div class="mt-5">
+    <p class="lead">Mis últimas transacciones</p>
+    <div *ngIf="records?.length > 0;else noRecords">
+      <table mdbTable>
+        <thead>
+          <tr>
+            <th>Transacción</th>
+            <th>Monto</th>
+            <th>Estatus</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol 
+          *ngFor="let record of records;">
+            <td scope="row"><p class="red-text lead text-uppercase">{{ record.concept }}</p></td>
+            <td><p class="font-weight-bold">{{ record.amount }}</p></td>
+            <td><h4><mdb-badge warning="true" class="text-uppercase">{{ record.status }}</mdb-badge></h4></td>
+            <td><p class="font-weight-bold">{{ record.date }}</p></td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+    </div>
+    <ng-template #noRecords>
+      <hr>
+      <h3 class="text-center">No hay transacciones para mostrar.</h3>
+    </ng-template>
+
+  </div>
+  <app-footer></app-footer>
+  </div>
+</div>

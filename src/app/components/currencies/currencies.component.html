@@ -1,0 +1,44 @@
+<owl-carousel-o [options]="marketOptions">
+  <ng-template carouselSlide *ngFor="let currency of currencies" class="market-item">
+    <mdb-card class="market-cards">
+      <div class="content">
+        <div class="row">
+          <mdb-card-title class="market-symbol">{{ currency.symbol }}</mdb-card-title>
+          <p class="price-change">({{ currency.priceChangePercent }}%)</p>
+        </div>
+        <div class="row">
+          <mdb-card-title class="market-title">{{ currency.cryptoName }}</mdb-card-title>
+          <p class="price">$ {{ currency.askPrice }}</p>
+        </div>
+      </div>
+    </mdb-card>
+  </ng-template> 
+  <ng-template carouselSlide>
+    <mdb-card class="market-cards">
+      <div class="content">
+        <div class="row">
+          <mdb-card-title class="market-symbol">VES</mdb-card-title>
+          <p class="price-change">No hay cambios.</p>
+        </div>
+        <div class="row">
+          <mdb-card-title class="market-title">Bolívar Soberano</mdb-card-title>
+          <p class="price">$ 0.00045</p>
+        </div>
+      </div>
+    </mdb-card>
+  </ng-template>  
+  <ng-template carouselSlide>
+    <mdb-card class="market-cards">
+      <div class="content">
+        <div class="row">
+          <mdb-card-title class="market-symbol">PTR</mdb-card-title>
+          <p class="price-change">No hay cambios</p>
+        </div>
+        <div class="row">
+          <mdb-card-title class="market-title">Petro</mdb-card-title>
+          <p class="price">$ 60.00</p>
+        </div>
+      </div>
+    </mdb-card>
+  </ng-template>  
+</owl-carousel-o>

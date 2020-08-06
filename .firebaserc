@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "chin-chin-85522": {
+      "hosting": {
+        "chinchinfront": [
+          "chin-chin-85522"
+        ]
+      }
+    }
+  }
+}
